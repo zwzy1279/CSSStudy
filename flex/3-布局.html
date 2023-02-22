@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+        }
+        .box1 {
+            width:600px;
+            height:600px;
+            background:skyBlue;
+            /*这时没有为box设置弹性布局时，子元素的盒子默认是自上而下进行排列*/
+            /*现在我们为他设置flex，*/
+            display:flex;
+        }
+        .box1 div {
+            border:2px solid red;
+            background:yellow;
+        }
+        .flex1 {
+            flex:1;
+        }
+        .flex2 {
+            flex:2;
+            display:flex;
+            flex-direction: column;
+        }
+        .flex3 {
+            flex:2;
+        }
+        .flex4 {
+            flex:5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="flex1">1</div>
+        <div class="flex2">
+            <!--将flex2盒子也设置为flex容器-->
+            <div class="flex3">2.1</div>
+            <div class="flex4">2.2</div>
+        </div>
+    </div>
+</body>
+</html>

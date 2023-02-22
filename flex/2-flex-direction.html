@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+        }
+        .box1 {
+            width:600px;
+            height:600px;
+            background:skyBlue;
+            /*这时没有为box设置弹性布局时，子元素的盒子默认是自上而下进行排列*/
+            /*现在我们为他设置flex，*/
+            display:flex;
+            /*有了上面这一句，box就是flex容器了。flex-direction默认为row*/
+            /*给外层元素定义flex，把外层元素当“容器”元素，来控制其内部的子项元素“项目”的排列方式*/
+            flex-direction:column;/*将flex容器中的元素按照一列来排*/
+            /*没有设置flex-direction默认是row来排，排成一行*/
+        }
+        .box1 div {
+            border:2px solid red;
+            background:yellow;
+        }
+        .flex1 {
+            flex:1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="flex1"></div>
+        <div class="flex1"></div>
+        <div class="flex1"></div>
+    </div>
+</body>
+</html>

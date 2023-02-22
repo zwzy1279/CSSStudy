@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding:0px;
+            margin:0px;
+        }
+        .box1 {
+            width:100px;
+            height:100px;
+            background:red;
+            left:20px;/*这里的left:20px是无效的，因为设置的position是static*/
+            position:static;/*没有设置position的时候，默认是static*/
+        }
+        .box2 {
+            width:100px;
+            height:100px;
+            background:orange;
+            left:20px;
+            position:fixed;
+            top:20px;
+        }
+        .box3 {
+            width:100px;
+            height:100px;
+            background:yellow;
+            line-height:100px;/*line-height和height相等时，文字会垂直居中*/
+            text-align: center;/*文字左右居中*/
+            position:absolute;
+        }
+        .text {
+            font-size:10px;
+            top:-5px;
+            position:relative;/*想让2字在r的右上角*/
+        }
+        .btn {
+            /*想让按钮定位到黄色盒子的右上角*/
+            top:0px;
+            right:0px;
+            /*relative是相对于正常位置,所以在这里设置position:relative;并不行*/
+            position:absolute;/*absolute是相对于没有static的父节点进行的定位，所以想有效必须给父元素设置上非static,absolute,relative,fixed都是有效的*/
+            /*不然单纯的absolute,button会跑到相对于窗口的top:0,right:0的位置*/
+        }
+       
+    </style>
+</head>
+<body>
+    <!--static-->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <br/><br/><br/>
+    <div class="box3">
+        <!--relative-->
+        <span>S=r<span class="text">2</span></span>
+        <!--absolute-->
+        <button class="btn">关闭</button>
+    </div>
+</body>
+</html>
