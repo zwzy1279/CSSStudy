@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+        }
+        .bigbox {
+            width:500px;
+            height:500px;
+            background:rgb(134, 102, 210);
+            position:relative;
+        }
+        .smallbox {
+            width:100px;
+            height:100px;
+            background:yellow;
+            /*想让这个小盒子在大盒子的中间*/
+            /*relative是相对正常的位置，absolute是相对于非static的父元素。*/
+            /*这里的小盒子是相对于大盒子而言的，所以为小盒子设置上absolute,为父元素大盒子设置relative*/
+            position:absolute;
+            left:50%;/*50%是相对于父元素而言的*/
+            top:50%;
+            /*而现在小盒子虽然偏移了，但是不在中间，此时子元素的左上角的位置刚好对应的是父元素的中心
+            我们可以用transform来设置向左和向上一些，把子元素往左移动50%，往上移动50%
+            这里translate的50%是针对子元素自身的宽度来定的，而上面的left的50%是相对于父元素的宽高来定的*/
+            transform:translate(-50%,-50%);/*translate的第一二个参数都是-50%*/
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="smallbox"></div>
+    </div>
+</body>
+</html>

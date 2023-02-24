@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background:orange;
+            width:100px;
+            height:100px;
+        }
+        #box1 {
+            background:yellow;
+            width:100px;
+            height:100px;
+        }
+        .box2 {
+            background:orange !important;
+            width:100px;
+            height:100px;
+        }
+        #box2 {
+            background:yellow;
+            width:100px;
+            height:100px;
+        }
+        .site:link {/*还未访问显示的*/
+            color:red;
+        }
+        .site:visited {/*访问过了显示的*/
+            color:orange;
+        }
+        .site:hover {/*光标悬停在上面*/
+            color:yellow;
+        }
+        .site:active {/*按下去显示的*/
+            color:green;
+        }
+        .site {
+            color:blue;/*网页显示的上面伪元素设置的红色，所以可以知道伪类选择器优先级比类选择器高*/
+        }
+        .site2 {
+            color:pink;
+        }
+        [name="alink"] {
+            color:#bfa;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:100px;height:100px;background:red" class="box1" id="box1"></div>
+    <!--可以得出id选择器优先级比类选择器高。内联样式比id选择器优先级高-->
+    <!--内联样式>id选择器>class类选择器-->
+
+    <div style="width:100px;height:100px;background:green" class="box2" id="box2" ></div>
+    <!--这里本来是内联样式优先级最高的，本应该展示green的。但是我们在类选择器中加上了!important,让这个类选择器优先级最高了，所以呈现出来的颜色是橙色的-->
+    <!--!important>内联样式-->
+
+    <a href="#" class="site">我是链接</a>
+    <!--测试伪类选择器-->
+    <!--伪类选择器>类选择器-->
+
+    <a href="#" class="site2" name="alink">我是链接</a>
+    <!--属性选择器的使用-->
+    <!--属性选择器=类选择器，优先级相等，那么执行越往后面放的-->
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+            text-decoration: none;
+            list-style:none;
+        }
+        .bigbox {
+            width:120px;
+            height:600px;
+            background:skyblue;
+        }
+        .smallbox {
+            width:100px;
+            background: pink;
+            margin:0 auto;
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            /*鼠标悬停变成小手*/
+            cursor: pointer;
+        }
+        .bigbox:hover ul{/*当鼠标悬停在大盒子上面，再选择下面的ul*/
+            display:block;/*这里只有鼠标停留在大盒子上面才能显示ul*/
+        }
+        ul {
+            height:300px;
+            width:100px;
+            margin:0 auto;
+            border-top: 1px solid ghostwhite;
+            border-left:1px solid ghostwhite;
+            border-right:1px solid ghostwhite;
+            display:none;
+        }
+        ul li {
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            border-bottom: 1px solid ghostwhite;
+        }
+        a {
+            display: block;/*修改变色的范围*/
+        }
+        a:hover {
+            background:gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="smallbox">点我下拉菜单</div>
+        <ul>
+            <li><a href="#">我是菜单</a></li>
+            <li><a href="#">我是菜单</a></li>
+            <li><a href="#">我是菜单</a></li>
+            <li><a href="#">我是菜单</a></li>
+            <li><a href="#">我是菜单</a></li>
+            <li><a href="#">我是菜单</a></li>
+        </ul>
+    </div>
+</body>
+</html>

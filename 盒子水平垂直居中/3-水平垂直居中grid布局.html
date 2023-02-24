@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            width:500px;
+            height:500px;
+            background:pink;
+            /*为大盒子父元素设置grid*/
+            display:grid;
+        }
+        .smallbox {
+            width:100px;
+            height:100px;
+            background:#bfa;
+            border:1px solid red;
+            /*为子元素设置水平垂直居中，而不像flex是在父元素中声明的*/
+            justify-self:center;/*水平居中*/
+            align-self:center;/*垂直居中*/
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="smallbox"></div>
+        <div class="smallbox"></div>
+        <div class="smallbox"></div>
+    </div>
+</body>
+</html>

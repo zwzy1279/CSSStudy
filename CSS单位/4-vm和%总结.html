@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+        }
+        .total {
+            width:600px;
+            height:600px;
+            background:pink;
+        }
+        .box1 {
+            width:50vw;/*这个box1会随着可视窗口的变化而变化，因为vw是相对于可视窗口而言的。他是可视窗口的50%*/
+            height:100px;
+            background:red;
+        }
+        .box2 {
+            width:50%;/*这个50%是相对于父元素total而言的，所以box2就是50px*/
+            height:100px;/*可视串口大小变化并不会影响box2，因为父元素是total，而他根本没有变化*/
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <!--viewport width 视觉上的宽度-->
+    <div class="total">
+        <div class="box1">50vw</div>
+        <div class="box2">50%</div>
+    </div>
+    <!--这里div的width:50vw是随浏览器串口变化而变化的，那到底是不是跟父元素body有关呢，看下一节-->
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0px;
+            padding:0px;
+        }
+        .bigbox {
+            width:500px;
+            height:500px;
+            background:rgb(134, 102, 210);
+            position:relative;
+        }
+        .smallbox {
+            width:100px;
+            height:100px;
+            background:yellow;
+            position:absolute;
+            transition: width 2s ease 0.2s;
+        }
+        .smallbox:hover {
+            width:400px;
+            height:500px;
+            background:rgb(94, 176, 193);
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="smallbox"></div>
+    </div>
+</body>
+</html>
